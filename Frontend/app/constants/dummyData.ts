@@ -167,3 +167,47 @@ export const sortOptions: SortOption[] = [
     label: "Newest",
   },
 ];
+
+export const savedHostels = [
+  {
+    id: "1",
+    name: "The Heritage Co-Living",
+    location: "South Kensington",
+    distance: "0.8 km away",
+    price: 450,
+    rating: 4.8,
+    image: IMAGES.hostel1,
+    amenities: ["Wifi", "AC", "Laundry"],
+    verified: true,
+    saved: true,
+  },
+  {
+    id: "2",
+    name: "Urban Nest PG",
+    location: "Chelsea",
+    distance: "1.2 km away",
+    price: 380,
+    rating: 4.5,
+    image: IMAGES.hostel2,
+    amenities: ["Wifi", "Kitchen"],
+    verified: true,
+    saved: true,
+  },
+];
+
+export const recentlyViewed = [
+  {
+    id: "3",
+    name: "London Hub PG",
+    image: IMAGES.hostel3,
+    price: 420,
+    rating: 4.9,
+  },
+  {
+    id: "4",
+    name: "The Stay-In",
+    image: IMAGES.hostel4,
+    price: 500,
+    rating: 4.7,
+  },
+];
