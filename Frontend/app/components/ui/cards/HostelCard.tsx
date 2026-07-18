@@ -106,11 +106,15 @@ export default function HostelCard({
             </Text>
           </View>
 
-          <TouchableOpacity className="bg-[#0B2E7A] px-5 py-3 rounded-full">
-            <Text className="text-white font-semibold">
-              View Details
-            </Text>
-          </TouchableOpacity>
+          <TouchableOpacity
+    activeOpacity={0.8}
+    onPress={onPress}
+    className="bg-[#0B2E7A] px-5 py-3 rounded-full"
+>
+    <Text className="text-white font-semibold">
+        View Details
+    </Text>
+</TouchableOpacity>
 
         </View>
 

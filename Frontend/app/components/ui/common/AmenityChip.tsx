@@ -1,17 +1,33 @@
-import { Text, View } from "react-native";
+import { TouchableOpacity, Text } from "react-native";
 
 interface AmenityChipProps {
-  label: string;
+  title: string;
+  selected: boolean;
+  onPress: () => void;
 }
 
 export default function AmenityChip({
-  label,
+  title,
+  selected,
+  onPress,
 }: AmenityChipProps) {
   return (
-    <View className="bg-gray-100 rounded-full px-3 py-2 mr-2 mb-2">
-      <Text className="text-xs font-medium text-gray-700">
-        {label}
+    <TouchableOpacity
+      activeOpacity={0.8}
+      onPress={onPress}
+      className={`px-4 py-3 rounded-full border mr-3 mb-3 ${
+        selected
+          ? "bg-teal-50 border-teal-700"
+          : "bg-white border-gray-300"
+      }`}
+    >
+      <Text
+        className={`text-sm font-medium ${
+          selected ? "text-teal-700" : "text-gray-700"
+        }`}
+      >
+        {title}
       </Text>
-    </View>
+    </TouchableOpacity>
   );
 }

@@ -1,5 +1,11 @@
 import { IMAGES } from "./images";
-import { Category, Hostel, Location } from "../types/hostel";
+import {
+  Category,
+  Hostel,
+  Location,
+  ExploreFilter,
+  SortOption,
+} from "../types/hostel";
 
 /* ---------------------------- Categories ---------------------------- */
 
@@ -109,5 +115,55 @@ export const hostels: Hostel[] = [
     availableRooms: 3,
     isSaved: false,
     amenities: ["WiFi", "Gym", "Meals Included"],
+  },
+];
+
+/* -------------------------- Explore Filters ------------------------- */
+
+export const exploreFilters: ExploreFilter[] = [
+  {
+    id: "budget",
+    label: "Budget",
+  },
+  {
+    id: "gender",
+    label: "Gender",
+  },
+  {
+    id: "room",
+    label: "Room",
+  },
+  {
+    id: "distance",
+    label: "Distance",
+  },
+  {
+    id: "amenities",
+    label: "Amenities",
+  },
+  {
+    id: "verified",
+    label: "Verified",
+  },
+];
+
+/* --------------------------- Sort Options --------------------------- */
+
+export const sortOptions: SortOption[] = [
+  {
+    id: "nearest",
+    label: "Nearest",
+  },
+  {
+    id: "lowest_price",
+    label: "Lowest Price",
+  },
+  {
+    id: "highest_rated",
+    label: "Highest Rated",
+  },
+  {
+    id: "newest",
+    label: "Newest",
   },
 ];

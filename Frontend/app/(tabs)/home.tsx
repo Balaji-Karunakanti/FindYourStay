@@ -1,5 +1,7 @@
-import { SafeAreaView } from "react-native-safe-area-context";
+import { useState } from "react";
 import { ScrollView } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { router } from "expo-router";
 
 import Header from "../components/ui/Home/Header";
 import SearchBar from "../components/ui/common/SearchBar";
@@ -11,6 +13,8 @@ import RecommendedList from "../components/ui/Home/RecommendedList";
 import { hostels } from "../constants/dummyData";
 
 export default function HomeScreen() {
+  const [search, setSearch] = useState("");
+
   return (
     <SafeAreaView className="flex-1 bg-white">
       <ScrollView
@@ -24,7 +28,18 @@ export default function HomeScreen() {
           location="Hyderabad, India"
         />
 
-        <SearchBar />
+        <SearchBar
+          value={search}
+          onChangeText={setSearch}
+          placeholder="Search hostels, PGs or locations"
+          onSearchPress={() => console.log("Searching:", search)}
+          onVoicePress={() => console.log("Voice Search")}
+          // onFilterPress={() => router.push("/filters")}
+          onFilterPress={() => {
+  console.log("Filter Pressed");
+  router.push("/filters");
+}}
+        />
 
         <CategoryList />
 
