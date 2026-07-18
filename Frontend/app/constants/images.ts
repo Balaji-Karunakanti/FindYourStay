@@ -10,4 +10,5 @@ export const IMAGES = {
   location4: require("../../assets/images/location4.jpg"),
 
   avatar: require("../../assets/images/avatar.png"),
+   profile: require("../../assets/images/profile.jpg")
 };
