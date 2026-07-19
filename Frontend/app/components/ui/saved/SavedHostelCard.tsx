@@ -89,7 +89,7 @@ export default function SavedHostelCard({
         </View>
 
         {/* Divider */}
-        <View className="my-3 h-[1px] bg-gray-200" />
+        <View className="my-3 h-px bg-gray-200" />
 
         {/* Bottom Section */}
         <View className="flex-row items-center justify-between">
