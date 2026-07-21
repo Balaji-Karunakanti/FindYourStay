@@ -10,5 +10,10 @@ export const IMAGES = {
   location4: require("../../assets/images/location4.jpg"),
 
   avatar: require("../../assets/images/avatar.png"),
-   profile: require("../../assets/images/profile.jpg")
+   profile: require("../../assets/images/profile.jpg"),
+
+    room1: require("../../assets/images/room1.jpg"),
+  room2: require("../../assets/images/room2.jpg"),
+  room3: require("../../assets/images/room3.jpg"),
+map: require("../../assets/images/map.jpg")
 };

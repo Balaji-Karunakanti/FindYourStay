@@ -2,8 +2,13 @@ import { View, Text, Image, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { profile } from "../../../constants/profileData";
 import { IMAGES } from "../../../constants/images";
+import { router } from "expo-router";
 
 export default function ProfileCard() {
+
+   const handleEditProfile = () => {
+    router.push("/editProfile");
+  };
   return (
     <View className="mx-4 mt-4 rounded-3xl bg-white px-6 py-7 shadow-sm">
 
@@ -19,9 +24,12 @@ export default function ProfileCard() {
             />
           </View>
 
-          <TouchableOpacity className="absolute bottom-1 right-1 h-10 w-10 items-center justify-center rounded-full bg-[#0F2E87]">
-            <Ionicons name="create-outline" size={18} color="#fff" />
-          </TouchableOpacity>
+          <TouchableOpacity
+  onPress={handleEditProfile}
+  className="absolute bottom-1 right-1 h-10 w-10 items-center justify-center rounded-full bg-[#0F2E87]"
+>
+  <Ionicons name="create-outline" size={18} color="#fff" />
+</TouchableOpacity>
         </View>
 
         {/* Name */}
@@ -60,11 +68,14 @@ export default function ProfileCard() {
       </View>
 
       {/* Edit Button */}
-      <TouchableOpacity className="mt-8 rounded-xl bg-[#0F2E87] py-4 items-center">
-        <Text className="text-lg font-semibold text-white">
-          Edit Profile
-        </Text>
-      </TouchableOpacity>
+     <TouchableOpacity
+  onPress={handleEditProfile}
+  className="mt-8 rounded-xl bg-[#0F2E87] py-4 items-center"
+>
+  <Text className="text-lg font-semibold text-white">
+    Edit Profile
+  </Text>
+</TouchableOpacity>
 
     </View>
   );

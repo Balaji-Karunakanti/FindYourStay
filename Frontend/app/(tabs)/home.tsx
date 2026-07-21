@@ -59,15 +59,18 @@ export default function HomeScreen() {
           title="Recommended"
         />
 
-        <RecommendedList
-          hostels={hostels}
-          onHostelPress={(hostel) =>
-            console.log("Hostel:", hostel.name)
-          }
-          onSavePress={(hostel) =>
-            console.log("Save:", hostel.name)
-          }
-        />
+       <RecommendedList
+  hostels={hostels}
+  onHostelPress={(hostel) =>
+    router.push({
+      pathname: "/hostel/[id]",
+      params: { id: hostel.id },
+    })
+  }
+  onSavePress={(hostel) =>
+    console.log("Save:", hostel.name)
+  }
+/>
       </ScrollView>
     </SafeAreaView>
   );

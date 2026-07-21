@@ -1,12 +1,14 @@
 import React, { useMemo, useState } from "react";
 import { View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { router } from "expo-router";
+import { router, useLocalSearchParams } from "expo-router";
 import ExploreHeader from "../components/ui/explore/ExploreHeader";
 import FilterChips from "../components/ui/explore/FilterChips";
 import ResultsHeader from "../components/ui/explore/ResultsHeader";
 import HostelList from "../components/ui/explore/HostelList";
 import SearchBar from "../components/ui/common/SearchBar";
+
+
 
 import {
   hostels,
@@ -20,7 +22,7 @@ export default function ExploreScreen() {
   const [selectedFilter, setSelectedFilter] = useState("");
   const [selectedSort] = useState(sortOptions[0]);
   const [refreshing, setRefreshing] = useState(false);
-
+const { id } = useLocalSearchParams();
   const filteredHostels = useMemo(() => {
     let data = [...hostels];
 
@@ -133,17 +135,22 @@ export default function ExploreScreen() {
       />
 
       {/* Hostel List */}
-      <HostelList
-        hostels={filteredHostels}
-        refreshing={refreshing}
-        onRefresh={handleRefresh}
-        onHostelPress={(hostel) => {
-          console.log("Open Hostel:", hostel.name);
-        }}
-        onSaveToggle={(hostel) => {
-          console.log("Save Hostel:", hostel.id);
-        }}
-      />
+    <HostelList
+  hostels={filteredHostels}
+  refreshing={refreshing}
+  onRefresh={handleRefresh}
+  onHostelPress={(hostel) => {
+    router.push({
+      pathname: "/hostel/[id]",
+      params: {
+        id: hostel.id,
+      },
+    });
+  }}
+  onSaveToggle={(hostel) => {
+    console.log("Save Hostel:", hostel.id);
+  }}
+/>
     </SafeAreaView>
   );
 }

@@ -80,7 +80,7 @@ const applyFilters = () => {
 };
 
   return (
-    <View className="flex-1 bg-gray-100">
+    <View className="flex-1 mt-12 bg-gray-100">
       <FilterHeader onReset={resetFilters} />
 
       <ScrollView
