@@ -5,11 +5,13 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 interface PaymentButtonProps {
   disabled?: boolean;
   title?: string;
+  paymentTitle?:string,
   onPress: () => void;
 }
 
 export default function PaymentButton({
   disabled = false,
+  paymentTitle,
   onPress,
 }: PaymentButtonProps) {
   const insets = useSafeAreaInsets();
@@ -28,7 +30,7 @@ export default function PaymentButton({
         }`}
       >
         <Text className="text-center text-lg font-bold text-white">
-          Continue to Payment
+         {paymentTitle}
         </Text>
       </TouchableOpacity>
 

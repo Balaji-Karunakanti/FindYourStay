@@ -102,6 +102,7 @@ export default function ConfirmBookingScreen() {
         onPress={() => {
           router.push("/payment");
         }}
+        paymentTitle="Continue To Payment"
       />
     </SafeAreaView>
   );

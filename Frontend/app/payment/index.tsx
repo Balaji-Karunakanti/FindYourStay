@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-
+import { router } from "expo-router";
 import {
   PaymentHeader,
   PaymentMethods,
@@ -25,9 +25,11 @@ export default function PaymentScreen() {
     console.log("Promo Code:", promoCode);
   };
 
-  const handlePayment = () => {
-    console.log("Proceed Payment");
-  };
+ const handlePayment = () => {
+  // Perform payment logic here
+
+  router.replace("/bookingSuccess");
+};
 
   return (
     <SafeAreaView className="flex-1 bg-gray-100">
@@ -75,6 +77,7 @@ export default function PaymentScreen() {
           paymentSummary.discount
         }`}
         onPress={handlePayment}
+        paymentTitle="Confirm Booking"
       />
     </SafeAreaView>
   );
