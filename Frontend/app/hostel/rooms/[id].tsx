@@ -1,5 +1,5 @@
 import { ScrollView, View } from "react-native";
-import { useLocalSearchParams } from "expo-router";
+import { router,useLocalSearchParams } from "expo-router";
 
 import {
   RoomHero,
@@ -79,15 +79,15 @@ export default function RoomDetailsScreen() {
         />
       </ScrollView>
 
-      <BottomBookingBar
-        rent={room.pricing.rent}
-        onContact={() => {
-          console.log("Contact Owner");
-        }}
-        onBook={() => {
-          console.log("Book Room");
-        }}
-      />
+     <BottomBookingBar
+  rent={room.pricing.rent}
+  onContact={() => {
+    console.log("Contact Owner");
+  }}
+  onBook={() => {
+    router.push("/confirmBooking");
+  }}
+/>
     </View>
   );
 }
