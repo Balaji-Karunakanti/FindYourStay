@@ -4,6 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { ScrollView, Text, View } from "react-native";
 import { hostelDetails } from "../constants/hostelDetailsData";
 import { BottomBookingBar, HostCard, HostelHero, HostelInfo, LocationMap, PricingCard, ReviewsSection, RoomTypes } from "../components/ui/hostelDetails";
+import { router } from "expo-router";
 
 
 
@@ -31,7 +32,17 @@ export default function HostelDetailsScreen() {
             distanceFromMetro={hostelDetails.distanceFromMetro}
           />
 
-          <RoomTypes rooms={hostelDetails.rooms} />
+       <RoomTypes
+  rooms={hostelDetails.rooms}
+  onRoomPress={(room) =>
+    router.push({
+      pathname: "/hostel/rooms/[id]",
+      params: {
+        id: room.id,
+      },
+    })
+  }
+/>
           <PricingCard pricing={hostelDetails.pricing} />
           <ReviewsSection reviews={hostelDetails.reviews} />
           <HostCard host={hostelDetails.host} />

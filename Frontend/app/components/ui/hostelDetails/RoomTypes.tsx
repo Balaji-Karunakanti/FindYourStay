@@ -1,5 +1,7 @@
 import { ScrollView, View } from "react-native";
 
+
+
 import { Room } from "../../../types/hostelDetails";
 import SectionTitle from "./SectionTitle";
 import RoomCard from "./RoomCard";

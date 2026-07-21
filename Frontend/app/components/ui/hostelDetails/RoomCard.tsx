@@ -18,8 +18,11 @@ export default function RoomCard({
     : "bg-red-500";
 
   return (
-    <View className="bg-white rounded-3xl overflow-hidden mr-4 w-72 shadow-sm border border-gray-100">
-
+    <TouchableOpacity
+      activeOpacity={0.9}
+      onPress={onPress}
+      className="bg-white rounded-3xl overflow-hidden mr-4 w-72 shadow-sm border border-gray-100"
+    >
       {/* Room Image */}
       <View className="relative">
         <Image
@@ -40,7 +43,6 @@ export default function RoomCard({
 
       {/* Content */}
       <View className="p-4">
-
         {/* Room Name */}
         <Text className="text-lg font-bold text-gray-900">
           {room.title}
@@ -70,7 +72,6 @@ export default function RoomCard({
 
         {/* Features */}
         <View className="flex-row items-center mb-5">
-
           <Ionicons
             name="bed-outline"
             size={18}
@@ -80,11 +81,9 @@ export default function RoomCard({
           <Text className="ml-2 text-gray-600">
             Fully Furnished
           </Text>
-
         </View>
 
         {/* Button */}
-
         <PrimaryButton
           title={
             room.available
@@ -93,9 +92,7 @@ export default function RoomCard({
           }
           onPress={onPress ?? (() => {})}
         />
-
       </View>
-
-    </View>
+    </TouchableOpacity>
   );
 }
